@@ -43,3 +43,58 @@
 - **StandardCustomToolbarTest**
 - **CharacterPagingSourceTest**
 - **MainActivityTest**
+  
+
+### Tech Stack
+
+#### Core Technologies
+- **Android Gradle Plugin (AGP)**: 8.3.1
+- **Kotlin**: 1.9.22
+
+#### Libraries
+- **AndroidX Core KTX**: 1.12.0
+- **JUnit**: 4.13.2
+- **Espresso Core**: 3.5.1
+- **AppCompat**: 1.6.1
+- **Material Components**: 1.11.0
+- **Navigation Component**: 2.7.7
+- **Paging Library**: 3.2.1
+- **Hilt**: 2.50
+- **DataStore**: 1.0.0
+- **OkHttp**: 4.12.0
+- **Retrofit**: 2.9.0
+- **Kotlin Symbol Processing (KSP)**: 1.9.22-1.0.16
+- **Lottie**: 6.1.0
+- **Glide**: 4.15.1
+- **Room**: 2.6.1
+- **Shimmer**: 0.5.0
+
+#### UI/Compose
+- **Lifecycle**: 2.7.0
+- **Activity Compose**: 1.8.2
+- **Hilt Compose Navigation**: 1.2.0
+- **ConstraintLayout**: 2.1.4
+- **ConstraintLayout Compose**: 1.0.1
+- **Coil Compose**: 2.5.0
+- **Accompanist**: 0.32.0
+
+#### Testing
+- **JUnit**
+- **Espresso Core**
+- **Mockito**: 2.19.0
+- **Mockito Android**: 5.11.0
+- **MockK**: 1.13.10
+- **Fragment Testing**: 1.6.2
+
+#### Miscellaneous
+- **Compose Bom**: 2024.03.00
+
+#### Plugins
+- **Android Application**
+- **JetBrains Kotlin Android**
+- **Hilt**
+- **Navigation Safe Args**
+- **Kotlin Symbol Processing (KSP)**
+- **Kotlin Parcelize**
+
+This structured organization provides a clear overview of the technologies and libraries utilized in the project, making it easier for users to understand the tech stack at a glance.
