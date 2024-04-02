@@ -1,0 +1,42 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "swipefun"
+include ':app'
+include ':uimodule'
+include ':core'
+include ':common:data'
+include ':common:domain'
+include ':common:ui'
+include ':matchmaker'
+
+include ':matchmaker:common:data'
+include ':matchmaker:common:domain'
+include ':matchmaker:common:ui'
+
+include ':matchmaker:feed:ui'
+include ':matchmaker:feed:data'
+include ':matchmaker:feed:domain'
+
+include ':matchmaker:profile:ui'
+include ':matchmaker:profile:data'
+include ':matchmaker:profile:domain'
+include ':matchmaker:feed:composeui'

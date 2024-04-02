@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heading3">16sp</dimen>
+    <dimen name="heading2">20sp</dimen>
+    <dimen name="heading1">24sp</dimen>
+    <dimen name="body1">14sp</dimen>
+    <dimen name="body2">12sp</dimen>
+    <dimen name="body3">10sp</dimen>
+    <dimen name="button1">16sp</dimen>
+    <dimen name="button2">14sp</dimen>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ToolbarIcon">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="bottomNavigationView.Active" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Text.Primary" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="Text.Primary.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Title" parent="Text.Primary.Bold">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+</resources>

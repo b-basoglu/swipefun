@@ -1,0 +1,100 @@
+plugins {
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.navigationSafeArg)
+    alias(libs.plugins.kotlinksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlinParcelize)
+}
+
+android {
+    namespace 'com.bbasoglu.swipefun.matchmaker.feed.composeui'
+
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        // work-runtime-ktx 2.1.0 and above now requires Java 8
+        jvmTarget = JavaVersion.VERSION_17
+        // Enable Coroutines and Flow APIs
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
+    }
+
+    buildFeatures {
+        viewBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.8"
+    }
+}
+
+dependencies {
+
+    implementation libs.androidxCoreKtx
+    implementation libs.androidxAppcompat
+    implementation libs.material
+    ksp libs.hiltCompiler
+    implementation libs.hiltAndroid
+    implementation libs.navigationFragment
+    implementation libs.navigationUi
+    implementation libs.pagingRuntime
+    testImplementation libs.junit
+    androidTestImplementation libs.androidxJunit
+    androidTestImplementation libs.androidxEspressoCore
+    implementation libs.shimmer
+
+    implementation project(':uimodule')
+    implementation project(':common:ui')
+    implementation project(':matchmaker:feed:domain')
+    implementation project(':core')
+
+
+
+    implementation platform(libs.composeBom)
+    implementation libs.lifeCycleCompose
+    implementation libs.lifeCycleComposeViewModel
+    implementation libs.lifeCycleLiveDataKtx
+    implementation libs.lifeCycleRuntimeKtx
+    implementation libs.activityCompose
+    implementation libs.hiltComposeNavigation
+    implementation libs.composeNavigation
+    implementation libs.composePaging
+    implementation libs.constraintLayout
+    implementation libs.composeConstraintLayout
+    implementation libs.composeMaterial
+    implementation libs.composeUi
+    implementation libs.composeUiUtil
+    implementation libs.composeUiPrev
+    implementation libs.composeUiViewBind
+    implementation libs.composeUiTooling
+    implementation libs.composeMaterial
+    implementation libs.composeCoil
+    implementation libs.accompanist
+
+    debugImplementation libs.composeUiTooling
+
+}
+
+hilt {
+    enableAggregatingTask = true
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@+id/feed_nav">
+
+    <include
+        android:id="@+id/feed_nav"
+        app:graph="@navigation/feed_nav"
+        android:name="com.ironwilltech.feed"/>
+    <include
+        android:id="@+id/feed_compose_nav"
+        app:graph="@navigation/feed_compose_nav"
+        android:name="com.ironwilltech.feed.compose"/>
+    <include
+        android:id="@+id/profile_nav"
+        app:graph="@navigation/profile_nav"
+        android:name="com.ironwilltech.profile"/>
+</navigation>

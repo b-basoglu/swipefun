@@ -1,0 +1,78 @@
+plugins {
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlinksp)
+
+}
+
+android {
+    namespace 'com.bbasoglu.swipefun.matchmaker.feed.data'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        // work-runtime-ktx 2.1.0 and above now requires Java 8
+        jvmTarget = JavaVersion.VERSION_17
+        // Enable Coroutines and Flow APIs
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.androidxCoreKtx
+    implementation libs.androidxAppcompat
+    implementation libs.material
+    implementation libs.pagingRuntime
+    implementation project(':matchmaker:common:data')
+    implementation project(':core')
+    ksp libs.hiltCompiler
+    implementation libs.hiltAndroid
+
+    testImplementation libs.junit
+    testImplementation libs.mockkAndroid
+    testImplementation libs.mockkAgent
+    androidTestImplementation libs.mockkAndroid
+    androidTestImplementation libs.mockkAgent
+    androidTestImplementation libs.androidxJunit
+    androidTestImplementation libs.androidxEspressoCore
+    androidTestImplementation libs.archCoreCommon
+    androidTestImplementation libs.archCoreRuntime
+    androidTestImplementation libs.archCoreTesting
+
+    androidTestImplementation libs.retrofit
+    androidTestImplementation libs.retrofitConvertor
+
+
+}
+
+hilt {
+    enableAggregatingTask = true
+}

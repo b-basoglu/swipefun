@@ -1,0 +1,107 @@
+[versions]
+agp = "8.3.1"
+kotlin = "1.9.22"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+navVersion = "2.7.7"
+pagingVersion = "3.2.1"
+hiltVersion = "2.50"
+dataStoreVersion = "1.0.0"
+okHttpVersion = "4.12.0"
+retrofitVersion = "2.9.0"
+kspVersion = "1.9.22-1.0.16"
+lottieVersion = "6.1.0"
+glideVersion = "4.15.1"
+roomVersion = "2.6.1"
+shimmerVersion = "0.5.0"
+
+
+lifecycleVersion = "2.7.0"
+activityComposeVersion = "1.8.2"
+hiltComposeNavVersion = "1.2.0"
+constraintVersion = "2.1.4"
+constraintComposeVersion = "1.0.1"
+coilComposeVersion = "2.5.0"
+composeBom = "2024.03.00"
+accompanistVerion = "0.32.0"
+
+mockito = "2.19.0"
+mockitoAndroid = "5.11.0"
+mockk = "1.13.10"
+archCore = "2.2.0"
+fragmentTesting = "1.6.2"
+
+[libraries]
+androidxCoreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidxJunit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidxEspressoCore = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidxAppcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+navigationFragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navVersion" }
+navigationUi = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navVersion" }
+pagingRuntime = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "pagingVersion" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
+hiltAndroidTesting = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hiltVersion" }
+dataStore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStoreVersion" }
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttpVersion" }
+okHttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpVersion" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
+retrofitConvertor = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottieVersion" }
+glideCompiler = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glideVersion" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glideVersion" }
+roomRuntime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+roomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+roomPaging = { group = "androidx.room", name = "room-paging", version.ref = "roomVersion" }
+shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmerVersion" }
+
+
+accompanist = { group = "com.google.accompanist", name = "accompanist-systemuicontroller",version.ref = "accompanistVerion" }
+androidxFragmentTesting = { group = "androidx.fragment", name = "fragment-testing", version.ref = "fragmentTesting" }
+espressoContrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoCore" }
+mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockitoAndroid = { group = "org.mockito", name = "mockito-android", version.ref = "mockitoAndroid" }
+mockkAndroid = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+mockkAgent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+archCoreCommon = { group = "androidx.arch.core", name = "core-common", version.ref = "archCore" }
+archCoreRuntime = { group = "androidx.arch.core", name = "core-runtime", version.ref = "archCore" }
+archCoreTesting = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCore" }
+
+
+lifeCycleCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleVersion" }
+lifeCycleComposeViewModel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleVersion" }
+lifeCycleLiveDataKtx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
+lifeCycleRuntimeKtx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityComposeVersion" }
+hiltComposeNavigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltComposeNavVersion" }
+composeNavigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion" }
+composePaging = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
+constraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintVersion" }
+composeConstraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintComposeVersion" }
+composeUi = { group = "androidx.compose.ui", name = "ui" }
+composeUiUtil = { group = "androidx.compose.ui", name = "ui-util" }
+composeUiPrev = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+composeUiViewBind = { group = "androidx.compose.ui", name = "ui-viewbinding" }
+composeUiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+composeMaterial = { group = "androidx.compose.material3", name = "material3" }
+composeBom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom"  }
+composeCoil = { group = "io.coil-kt", name = "coil-compose",version.ref = "coilComposeVersion" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+navigationSafeArg = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navVersion" }
+kotlinksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlin"  }
+
+

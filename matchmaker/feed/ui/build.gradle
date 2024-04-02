@@ -1,0 +1,91 @@
+plugins {
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.navigationSafeArg)
+    alias(libs.plugins.kotlinksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlinParcelize)
+}
+
+android {
+    namespace 'com.bbasoglu.swipefun.matchmaker.feed.ui'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        // work-runtime-ktx 2.1.0 and above now requires Java 8
+        jvmTarget = JavaVersion.VERSION_17
+        // Enable Coroutines and Flow APIs
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
+    }
+
+    buildFeatures {
+        viewBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.8"
+    }
+}
+
+dependencies {
+
+    implementation libs.androidxCoreKtx
+    implementation libs.androidxAppcompat
+    implementation libs.material
+    ksp libs.hiltCompiler
+    implementation libs.hiltAndroid
+    implementation libs.navigationFragment
+    implementation libs.navigationUi
+    implementation libs.pagingRuntime
+    ksp libs.glideCompiler
+    implementation libs.glide
+    implementation libs.shimmer
+    implementation platform(libs.composeBom)
+    implementation libs.lifeCycleCompose
+    implementation libs.lifeCycleComposeViewModel
+    implementation libs.lifeCycleLiveDataKtx
+    implementation libs.lifeCycleRuntimeKtx
+    implementation libs.activityCompose
+    implementation libs.hiltComposeNavigation
+
+    testImplementation libs.junit
+    androidTestImplementation libs.mockkAndroid
+    androidTestImplementation libs.mockkAgent
+    androidTestImplementation libs.mockito
+    androidTestImplementation libs.mockitoAndroid
+    androidTestImplementation libs.androidxJunit
+    androidTestImplementation libs.androidxEspressoCore
+    androidTestImplementation libs.archCoreCommon
+    androidTestImplementation libs.archCoreRuntime
+    androidTestImplementation libs.archCoreTesting
+
+    implementation project(':uimodule')
+    implementation project(':common:ui')
+    implementation project(':matchmaker:feed:domain')
+    implementation project(':core')
+
+}
+
+hilt {
+    enableAggregatingTask = true
+}
