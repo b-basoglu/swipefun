@@ -96,5 +96,3 @@
 - **Navigation Safe Args**
 - **Kotlin Symbol Processing (KSP)**
 - **Kotlin Parcelize**
-
-This structured organization provides a clear overview of the technologies and libraries utilized in the project, making it easier for users to understand the tech stack at a glance.
