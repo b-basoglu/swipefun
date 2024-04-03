@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_action">#4C00C8</color>
-    <color name="disabled_primary_action">#C2A9EA</color>
-    <color name="highlighted_primary_action">#380094</color>
-    <color name="secondary_action">#FFCB67</color>
-    <color name="disabled_secondary_action">#FAECD1</color>
-    <color name="highlighted_secondary_action">#FFB933</color>
-    <color name="tertiary_action">@color/primary_action</color>
-    <color name="disabled_tertiary_action">#C2A9EA</color>
-    <color name="highlighted_tertiary_action">#380094</color>
-    <color name="app_background_color">#FFFFFF</color>
-    <color name="component_background_color">#FFFFFF</color>
-    <color name="base">#D4DEFF</color>
-    <color name="border">#E4E4E4</color>
-    <color name="focus">#FFE600</color>
-    <color name="chat_bubble">#FFEDB7</color>
-    <color name="text_light">#FFFFFFFF</color>
-    <color name="text_dark">#222222</color>
-    <color name="success">#14D779</color>
-    <color name="error">#FF3D00</color>
-    <color name="information">#A6B8F4</color>
-    <color name="heading">#C70021</color>
-    <color name="system_border">@android:color/transparent</color>
-    <color name="text_color_on_primary">@color/text_light</color>
-    <color name="text_color_on_secondary">@color/text_dark</color>
-    <color name="chat_input_background_color">@color/component_background_color</color>
-    <color name="dialog_main_button">#007AFF</color>
-    <color name="toolbar_border">@color/border</color>
-    <color name="footer_background">@android:color/transparent</color>
-    <color name="text_dark_transparent">#80FFFFFF</color>
-    <color name="transparent_dark">#33000000</color>
-    <color name="chat_available_color">#018A23</color>
-
-    <color name="text_color_on_disabled_secondary">#222222</color>
 
 
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -48,20 +10,8 @@
     <color name="textColorPrimary">#FF000000</color>
     <color name="colorOnPrimary">#FF000000</color>
     <color name="transparent">#00000000</color>
-    <color name="gray">#808080</color>
-    <color name="gray50">#80808080</color>
-    <color name="gray25">#40808080</color>
-    <color name="orange">#FF5733</color>
-    <color name="orange_disabled">#FB9E8A</color>
-    <color name="red">#FF3300</color>
-    <color name="red_disabled">#FD9379</color>
-    <color name="colorPrimaryGray">#434955</color>
-    <color name="antiFlashWhite">#F0F1F3</color>
 
     <color name="dash_color">#6248FF</color>
-    <color name="dash_color_disabled">#4D6248FF</color>
-
-    <color name="colorOnPrimary50">#80202020</color>
 
     <color name="colorSecondary">#F2F2F2</color>
     <color name="colorScrim10">#1A000000</color>
