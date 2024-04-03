@@ -4,7 +4,7 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 
 - Feed page shows fragment/xml implementation of tinder swipe using paging3 library.
 - (Experimental) FeedCompose page shows compose implementation of tinder swipe custom paging implementation. 
-- ProfilePage shows profiles that swiped right and stored in room using pagination.
+- ProfilePage shows profiles that swiped right and stored in room using paging3.
 
 ### Modules
 
