@@ -59,8 +59,6 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 
 #### Libraries
 - **AndroidX Core KTX**: 1.12.0
-- **JUnit**: 4.13.2
-- **Espresso Core**: 3.5.1
 - **AppCompat**: 1.6.1
 - **Material Components**: 1.11.0
 - **Navigation Component**: 2.7.7
@@ -86,8 +84,8 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 - **Accompanist**: 0.32.0
 
 #### Testing
-- **JUnit**
-- **Espresso Core**
+- **JUnit**: 4.13.2
+- **Espresso Core**: 3.5.1
 - **Mockito**: 2.19.0
 - **Mockito Android**: 5.11.0
 - **MockK**: 1.13.10
