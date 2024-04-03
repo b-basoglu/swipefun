@@ -1,7 +1,5 @@
 package com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.model
 
-import com.bbasoglu.swipefun.matchmaker.feed.domain.model.LocationDomainModel
-import com.bbasoglu.swipefun.matchmaker.feed.domain.model.OriginDomainModel
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseAdapterData
 import kotlinx.parcelize.Parcelize
 
