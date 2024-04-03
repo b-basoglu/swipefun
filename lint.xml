@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+
+
+    <issue id="NotificationPermission">
+        <ignore regexp="com.bumptech.glide.request.target.NotificationTarget" />
+    </issue>
+    <!-- Disable the IconMissingDensityFolder check in this project -->
+    <issue id="ic_launcher_round.xml" severity="ignore" />
+
+</lint>

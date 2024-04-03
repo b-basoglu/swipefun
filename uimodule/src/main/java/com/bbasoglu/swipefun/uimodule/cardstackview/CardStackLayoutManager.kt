@@ -1,6 +1,5 @@
 package com.bbasoglu.swipefun.uimodule.cardstackview
 
-import android.content.Context
 import android.graphics.PointF
 import android.os.Handler
 import android.view.View
