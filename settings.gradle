@@ -26,7 +26,6 @@ include ':core'
 include ':common:data'
 include ':common:domain'
 include ':common:ui'
-include ':matchmaker'
 
 include ':matchmaker:common:data'
 include ':matchmaker:common:domain'
