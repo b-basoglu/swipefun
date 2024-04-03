@@ -76,6 +76,7 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 - **Shimmer**: 0.5.0
 
 #### UI/Compose
+- **Compose Bom**: 2024.03.00
 - **Lifecycle**: 2.7.0
 - **Activity Compose**: 1.8.2
 - **Hilt Compose Navigation**: 1.2.0
@@ -92,8 +93,6 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 - **MockK**: 1.13.10
 - **Fragment Testing**: 1.6.2
 
-#### Miscellaneous
-- **Compose Bom**: 2024.03.00
 
 #### Plugins
 - **Android Application**
