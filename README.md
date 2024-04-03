@@ -18,7 +18,7 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 - Contains custom views, view extensions, and base view classes.
 
 #### :common
-- **:common:ui**: Holds strings shared across the application.
+- **:common:ui**: Holds strings shared across the application. Empty, meant for ui layer classes shared between multiple feature modules.
 - **:common:data**: Empty, meant for data layer classes shared between multiple feature modules.
 - **:common:domain**: Empty, meant for domain layer classes shared between multiple feature modules.
 
