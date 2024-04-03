@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import com.bbasoglu.swipefun.matchmaker.profile.ui.R
 import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.model.ProfileUiData
 import com.bbasoglu.swipefun.matchmaker.profile.ui.databinding.RowLikesBinding
+import com.bbasoglu.swipefun.uimodule.adapter.BaseAdapterParent
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseAdapterRow
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseViewHolder
-import com.bbasoglu.swipefun.uimodule.adapter.BaseAdapterParent
 
 class ProfileUiRow :
     BaseAdapterRow<ProfileUiRow.ViewHolder, ProfileUiData>() {
@@ -38,7 +38,7 @@ class ProfileUiRow :
 
     inner class ViewHolder(
         binding: RowLikesBinding,
-        val adapterClick: ((Any) -> Unit)?
+        private val adapterClick: ((Any) -> Unit)?
     ) :
         BaseViewHolder<ProfileUiData, RowLikesBinding>(
             binding

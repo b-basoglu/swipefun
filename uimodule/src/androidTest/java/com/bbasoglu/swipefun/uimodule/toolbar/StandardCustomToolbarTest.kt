@@ -1,10 +1,10 @@
 package com.bbasoglu.swipefun.uimodule.toolbar
 
-import com.bbasoglu.swipefun.uimodule.R
 import android.content.Context
 import android.view.Gravity
 import android.view.View.VISIBLE
 import androidx.test.core.app.ApplicationProvider
+import com.bbasoglu.swipefun.uimodule.R
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -19,7 +19,7 @@ class StandardCustomToolbarTest {
 
     @Before
     fun setUp() {
-        context = ApplicationProvider.getApplicationContext<Context>()
+        context = ApplicationProvider.getApplicationContext()
         standardCustomToolbar = StandardCustomToolbar(context)
         toolbarData = StandardToolbarData(
             title = "Test Title",

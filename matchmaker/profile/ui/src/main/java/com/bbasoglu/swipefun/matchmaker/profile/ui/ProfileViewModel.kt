@@ -6,7 +6,6 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.bbasoglu.swipefun.di.IoDispatcher
 import com.bbasoglu.swipefun.matchmaker.profile.domain.usecase.RickMortyGetLikesUseCase
-import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.ProfileAdapter
 import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.model.mapper.toProfileUiData
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseAdapterData
 import com.bbasoglu.swipefun.uimodule.base.BaseViewModel
@@ -22,7 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    val rickMortyGetLikesUseCase: RickMortyGetLikesUseCase,
+    private val rickMortyGetLikesUseCase: RickMortyGetLikesUseCase,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : BaseViewModel(){
     private var getCharactersJob: Job? = null
@@ -42,7 +41,7 @@ class ProfileViewModel @Inject constructor(
 
                     }
                 }
-            }catch (e:Exception){
+            } catch (_: Exception) {
 
             }
         }

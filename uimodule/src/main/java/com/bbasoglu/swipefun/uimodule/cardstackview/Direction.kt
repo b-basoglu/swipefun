@@ -1,6 +1,5 @@
 package com.bbasoglu.swipefun.uimodule.cardstackview
 
-import java.util.Arrays
 
 enum class Direction {
     Left,
@@ -9,6 +8,6 @@ enum class Direction {
     Bottom;
 
     companion object {
-        val HORIZONTAL = Arrays.asList(Left, Right)
+        val HORIZONTAL: List<Direction> = listOf(Left, Right)
     }
 }

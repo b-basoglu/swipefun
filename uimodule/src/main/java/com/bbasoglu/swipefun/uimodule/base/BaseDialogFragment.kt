@@ -17,9 +17,9 @@ abstract class BaseDialogFragment<VB : ViewBinding?> : DialogFragment() {
 
     protected abstract val viewModel: BaseViewModel
 
-    var activityListener: BaseActivity.ActivityListener? = null
+    private var activityListener: BaseActivity.ActivityListener? = null
 
-    var mViewBinding: VB? = null
+    private var mViewBinding: VB? = null
 
     abstract fun getViewBinding(): VB?
 

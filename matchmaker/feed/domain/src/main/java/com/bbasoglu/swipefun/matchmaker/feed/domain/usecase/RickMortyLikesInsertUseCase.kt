@@ -17,7 +17,7 @@ class RickMortyLikesInsertUseCase @Inject constructor(
             withContext(dispatcher){
                 rickMortyLikesInsertRepository.insertRickMorty(param.rickAndMortyCharacterDomainModel.toRickAndMortyEntity())
             }
-        }catch (e:Exception){
+        } catch (_: Exception) {
 
         }
 

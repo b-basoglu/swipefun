@@ -6,7 +6,6 @@ import junit.framework.TestCase.assertEquals
 import okhttp3.ConnectionPool
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import org.junit.Before
 import org.junit.Test
@@ -35,11 +34,8 @@ class ClientGeneratorTest {
 
     @Test
     fun `test generateRetrofitClient with custom interceptors`() {
-        val interceptor = object : Interceptor {
-            override fun intercept(chain: Interceptor.Chain): Response {
-                // do something
-                return chain.proceed(chain.request())
-            }
+        val interceptor = Interceptor { chain -> // do something
+            chain.proceed(chain.request())
         }
 
         val client = ClientGenerator.generateRetrofitClient(
@@ -92,11 +88,8 @@ class ClientGeneratorTest {
             .writeTimeout(
                 Constants.NetworkConstants.DEFAULT_WRITE_TIMEOUT_SEC_FOR_REQUEST,
                 TimeUnit.SECONDS
-            ).addInterceptor(object : Interceptor {
-                override fun intercept(chain: Interceptor.Chain): Response {
-                    // do something
-                    return chain.proceed(chain.request())
-                }
+            ).addInterceptor(Interceptor { chain -> // do something
+                chain.proceed(chain.request())
             })
             .build()
         val client = ClientGenerator.generateRetrofitClient(

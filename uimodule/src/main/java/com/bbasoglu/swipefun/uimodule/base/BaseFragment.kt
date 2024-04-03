@@ -22,9 +22,9 @@ abstract class BaseFragment<VB : ViewBinding?> : Fragment() {
 
     protected abstract val viewModel: BaseViewModel
 
-    var activityListener: BaseActivity.ActivityListener? = null
+    private var activityListener: BaseActivity.ActivityListener? = null
 
-    var nullableBinding: VB? = null
+    private var nullableBinding: VB? = null
     val binding get() = nullableBinding!!
 
     abstract fun getViewBinding(container: ViewGroup?): VB?
@@ -54,9 +54,7 @@ abstract class BaseFragment<VB : ViewBinding?> : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        activityListener?.let {
-            it.setBottomNavViewVisibility(isBottomNavViewVisible())
-        }
+        activityListener?.setBottomNavViewVisibility(isBottomNavViewVisible())
     }
 
     open fun isBottomNavViewVisible(): Boolean = false

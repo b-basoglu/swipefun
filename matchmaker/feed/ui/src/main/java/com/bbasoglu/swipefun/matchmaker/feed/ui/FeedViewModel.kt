@@ -7,7 +7,6 @@ import androidx.paging.map
 import com.bbasoglu.swipefun.di.IoDispatcher
 import com.bbasoglu.swipefun.matchmaker.feed.domain.usecase.RickMortyGetCharactersUseCase
 import com.bbasoglu.swipefun.matchmaker.feed.domain.usecase.RickMortyLikesInsertUseCase
-import com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.FeedAdapter
 import com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.model.FeedData
 import com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.model.mapper.toFeedData
 import com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.model.mapper.toRickAndMortyCharacterDomainModel
@@ -53,7 +52,7 @@ class FeedViewModel @Inject constructor(
                         }
                     }
                 }
-            }catch (e:Exception){
+            } catch (_: Exception) {
             }
         }
     }

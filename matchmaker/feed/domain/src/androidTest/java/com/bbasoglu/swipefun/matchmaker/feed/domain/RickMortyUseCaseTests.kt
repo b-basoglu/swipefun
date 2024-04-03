@@ -9,18 +9,17 @@ import com.bbasoglu.swipefun.matchmaker.common.data.model.response.RickAndMortyC
 import com.bbasoglu.swipefun.matchmaker.common.data.model.response.RickyMortyCharacterResponseModel
 import com.bbasoglu.swipefun.matchmaker.common.data.network.RickyMortyApiHelper
 import com.bbasoglu.swipefun.matchmaker.feed.data.CharacterPagingSource
-import com.bbasoglu.swipefun.matchmaker.feed.data.RickMortyLikesInsertRepository
 import com.bbasoglu.swipefun.matchmaker.feed.data.RickMortyGetCharactersRepository
+import com.bbasoglu.swipefun.matchmaker.feed.data.RickMortyLikesInsertRepository
 import com.bbasoglu.swipefun.matchmaker.feed.domain.model.RickAndMortyCharacterDomainModel
-import com.bbasoglu.swipefun.matchmaker.feed.domain.repository.RickMortyLikesInsertRepositoryImpl
 import com.bbasoglu.swipefun.matchmaker.feed.domain.repository.RickMortyGetCharactersRepositoryImpl
+import com.bbasoglu.swipefun.matchmaker.feed.domain.repository.RickMortyLikesInsertRepositoryImpl
 import com.bbasoglu.swipefun.matchmaker.feed.domain.usecase.RickMortyGetCharactersComposeUseCase
 import com.bbasoglu.swipefun.matchmaker.feed.domain.usecase.RickMortyGetCharactersUseCase
 import com.bbasoglu.swipefun.matchmaker.feed.domain.usecase.RickMortyLikesInsertUseCase
 import com.bbasoglu.swipefun.network.NetworkResponse
 import io.mockk.coEvery
 import io.mockk.mockk
-import junit.framework.TestCase
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -65,13 +64,29 @@ class RickMortyUseCaseTests {
     }
 
     @Test
-    fun `testExecute`() = runBlocking {
-        val character:RickAndMortyCharacterDomainModel = RickAndMortyCharacterDomainModel(1,"Mert",null,null,null,null,null,null,null,null,null,null)
+    fun testExecute() = runBlocking {
+        val character = RickAndMortyCharacterDomainModel(
+            1,
+            "Mert",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
         val param = RickMortyLikesInsertUseCase.Param(character)
 
         rickMortyLikesInsertUseCase.execute(param)
 
-        TestCase.assertEquals(rickMortyLikesInsertRepository.getRickMortyWithId(1)?.toRickAndMortyDomainModel()?.name, character.name)
+        assertEquals(
+            rickMortyLikesInsertRepository.getRickMortyWithId(1)?.toRickAndMortyDomainModel()?.name,
+            character.name
+        )
     }
 
     @Test
@@ -85,7 +100,7 @@ class RickMortyUseCaseTests {
     }
 
     @Test
-    fun `testGetCharacterRepositoryPaging`() = runBlocking {
+    fun testGetCharacterRepositoryPaging() = runBlocking {
         val expectedResponse = Response.success(
             RickyMortyCharacterResponseModel(
                 info = null,

@@ -14,20 +14,19 @@ class CardStackSnapHelper : SnapHelper() {
     override fun calculateDistanceToFinalSnap(
         layoutManager: RecyclerView.LayoutManager,
         targetView: View
-    ): IntArray? {
+    ): IntArray {
         if (layoutManager is CardStackLayoutManager) {
-            val manager = layoutManager
-            if (manager.findViewByPosition(manager.topPosition) != null) {
+            if (layoutManager.findViewByPosition(layoutManager.topPosition) != null) {
                 val x = targetView.translationX.toInt()
                 val y = targetView.translationY.toInt()
                 if (x != 0 || y != 0) {
-                    val setting = manager.cardStackSetting
+                    val setting = layoutManager.cardStackSetting
                     val horizontal = (abs(x.toDouble()) / targetView.width.toFloat()).toFloat()
                     val vertical = (abs(y.toDouble()) / targetView.height.toFloat()).toFloat()
                     val duration =
                         Duration.fromVelocity(if (velocityY < velocityX) velocityX else velocityY)
                     if (duration == Duration.Fast || setting.swipeThreshold < horizontal || setting.swipeThreshold < vertical) {
-                        val state = manager.cardStackState
+                        val state = layoutManager.cardStackState
                         if (setting.directions.contains(state.direction)) {
                             state.targetPosition = state.topPosition + 1
                             val swipeAnimationSetting = SwipeAnimationSetting.Builder()
@@ -35,30 +34,30 @@ class CardStackSnapHelper : SnapHelper() {
                                 .setDuration(duration.duration)
                                 .setInterpolator(setting.swipeAnimationSetting.interpolator)
                                 .build()
-                            manager.setSwipeAnimationSetting(swipeAnimationSetting)
+                            layoutManager.setSwipeAnimationSetting(swipeAnimationSetting)
                             velocityX = 0
                             velocityY = 0
                             val scroller = CardStackSmoothScroller(
                                 CardStackSmoothScroller.ScrollType.ManualSwipe,
-                                manager
+                                layoutManager
                             )
-                            scroller.targetPosition = manager.topPosition
-                            manager.startSmoothScroll(scroller)
+                            scroller.targetPosition = layoutManager.topPosition
+                            layoutManager.startSmoothScroll(scroller)
                         } else {
                             val scroller = CardStackSmoothScroller(
                                 CardStackSmoothScroller.ScrollType.ManualCancel,
-                                manager
+                                layoutManager
                             )
-                            scroller.targetPosition = manager.topPosition
-                            manager.startSmoothScroll(scroller)
+                            scroller.targetPosition = layoutManager.topPosition
+                            layoutManager.startSmoothScroll(scroller)
                         }
                     } else {
                         val scroller = CardStackSmoothScroller(
                             CardStackSmoothScroller.ScrollType.ManualCancel,
-                            manager
+                            layoutManager
                         )
-                        scroller.targetPosition = manager.topPosition
-                        manager.startSmoothScroll(scroller)
+                        scroller.targetPosition = layoutManager.topPosition
+                        layoutManager.startSmoothScroll(scroller)
                     }
                 }
             }
@@ -68,8 +67,7 @@ class CardStackSnapHelper : SnapHelper() {
 
     override fun findSnapView(layoutManager: RecyclerView.LayoutManager): View? {
         if (layoutManager is CardStackLayoutManager) {
-            val manager = layoutManager
-            val view = manager.findViewByPosition(manager.topPosition)
+            val view = layoutManager.findViewByPosition(layoutManager.topPosition)
             if (view != null) {
                 val x = view.translationX.toInt()
                 val y = view.translationY.toInt()

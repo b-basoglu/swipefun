@@ -6,7 +6,6 @@ import androidx.paging.PagingState
 import com.bbasoglu.swipefun.matchmaker.common.data.model.response.RickAndMortyCharacterResponseItem
 import com.bbasoglu.swipefun.matchmaker.common.data.network.RickyMortyApiHelper
 import com.bbasoglu.swipefun.network.NetworkResponse
-import java.lang.IllegalStateException
 import javax.inject.Inject
 
 class CharacterPagingSource @Inject constructor(private val rickyMortyApiHelper: RickyMortyApiHelper) : PagingSource<Int, RickAndMortyCharacterResponseItem>() {
@@ -15,9 +14,8 @@ class CharacterPagingSource @Inject constructor(private val rickyMortyApiHelper:
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, RickAndMortyCharacterResponseItem> = try {
-            val nextPage : Int = params.key ?: FIRST_PAGE_INDEX
-            val response = rickyMortyApiHelper.getCharacters(nextPage)
-            when(response){
+        val nextPage: Int = params.key ?: FIRST_PAGE_INDEX
+        when (val response = rickyMortyApiHelper.getCharacters(nextPage)) {
                 is NetworkResponse.Success -> {
                     var nextPageNumber : Int? = null
 

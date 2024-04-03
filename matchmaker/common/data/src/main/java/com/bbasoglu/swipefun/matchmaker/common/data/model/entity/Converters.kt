@@ -2,7 +2,6 @@ package com.bbasoglu.swipefun.matchmaker.common.data.model.entity
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
 
 class Converters {
 

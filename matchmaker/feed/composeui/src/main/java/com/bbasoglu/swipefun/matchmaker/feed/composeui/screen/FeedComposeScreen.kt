@@ -1,24 +1,30 @@
 package com.bbasoglu.swipefun.matchmaker.feed.composeui.screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
-import com.bbasoglu.swipefun.matchmaker.feed.composeui.FeedScreenComposeFragmentViewModel
-import androidx.compose.runtime.*
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import com.bbasoglu.swipefun.matchmaker.feed.composeui.FeedScreenComposeFragmentViewModel
 import com.bbasoglu.swipefun.matchmaker.feed.composeui.screen.ui.CircleButton
 import com.bbasoglu.swipefun.matchmaker.feed.composeui.screen.ui.FeedItemCard
 import com.bbasoglu.swipefun.matchmaker.feed.composeui.screen.ui.swipecard.Direction
@@ -26,6 +32,7 @@ import com.bbasoglu.swipefun.matchmaker.feed.composeui.screen.ui.swipecard.remem
 import com.bbasoglu.swipefun.matchmaker.feed.composeui.screen.ui.swipecard.swipeAbleCard
 import kotlinx.coroutines.launch
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun FeedComposeScreen(
     fragmentViewModel: FeedScreenComposeFragmentViewModel,
@@ -65,7 +72,7 @@ fun FeedComposeScreen(
                     }
             ) {
                 states.forEachIndexed { index, (matchProfile, state) ->
-                    matchProfile?.let {feedData ->
+                    matchProfile.let { feedData ->
                         if (state.swipedDirection == null) {
                             FeedItemCard(
                                 modifier = Modifier

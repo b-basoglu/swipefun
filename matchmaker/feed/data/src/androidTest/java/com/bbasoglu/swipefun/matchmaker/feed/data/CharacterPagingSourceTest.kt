@@ -8,8 +8,8 @@ import com.bbasoglu.swipefun.matchmaker.common.data.network.RickyMortyApiHelper
 import com.bbasoglu.swipefun.network.NetworkResponse
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.runBlocking
 import junit.framework.TestCase.assertEquals
+import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test
 import retrofit2.Response
@@ -22,7 +22,7 @@ class CharacterPagingSourceTest {
     private val mockApiHelper = mockk<RickyMortyApiHelper>()
 
     @Test
-    fun `loadCharactersSuccessfulResponse`() = runBlocking {
+    fun loadCharactersSuccessfulResponse() = runBlocking {
         val pagingSource = CharacterPagingSource(mockApiHelper)
         val params = PagingSource.LoadParams.Refresh(1, 20, false)
         val expectedResponse = Response.success(
@@ -61,7 +61,7 @@ class CharacterPagingSourceTest {
     }
 
     @Test
-    fun `loadCharactersErrorResponse`() = runBlocking {
+    fun loadCharactersErrorResponse() = runBlocking {
         val pagingSource = CharacterPagingSource(mockApiHelper)
         val params = PagingSource.LoadParams.Refresh(1, 20, false)
 

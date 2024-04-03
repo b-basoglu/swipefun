@@ -52,6 +52,7 @@ android {
     }
     lint {
         disable 'MonochromeLauncherIcon'
+        disable 'ContentDescription'
     }
 }
 

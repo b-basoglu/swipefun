@@ -7,16 +7,16 @@ import com.bbasoglu.swipefun.network.NetworkResponse
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Response
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.ResponseBody.Companion.toResponseBody
 
 class RickyMortyApiHelperImplTest {
 
     @Test
-    fun `getCharacters_SuccessfulResponse`() = runBlocking {
+    fun getCharactersSuccessfulResponse() = runBlocking {
         // Given
         val expectedResponseModel = RickyMortyCharacterResponseModel(info = null, results = null)
         val mockApiService = mockk<RickyMortyApiService>()
@@ -31,7 +31,7 @@ class RickyMortyApiHelperImplTest {
     }
 
     @Test
-    fun `getCharacters_ErrorResponse`() = runBlocking {
+    fun getCharactersErrorResponse() = runBlocking {
         // Given
         val mockApiService = mockk<RickyMortyApiService>()
         coEvery { mockApiService.getCharacters(any()) } returns Response.error(

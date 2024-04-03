@@ -1,5 +1,6 @@
 package com.bbasoglu.swipefun.uimodule.adapter.expandable
 
+import android.annotation.SuppressLint
 import android.text.TextUtils
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -42,6 +43,7 @@ abstract class BaseExpandableListAdapter (
     }
 
     private val onItemExpanded = object : BaseAdapterExpandableRow.OnItemExpanded {
+        @SuppressLint("NotifyDataSetChanged")
         override fun onClick(item: BaseExpandableListData, position: Int) {
             if (!TextUtils.isEmpty(lastExpandedItemId) && !item.id.equals(lastExpandedItemId)) {
                 val oldItem = findItemWithId(lastExpandedItemId)

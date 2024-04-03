@@ -9,7 +9,9 @@ import com.bbasoglu.swipefun.matchmaker.common.data.model.entity.RickMortyEntity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -35,7 +37,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `insertAndRetrieveSingleRickMortyEntity`() = runBlocking {
+    fun insertAndRetrieveSingleRickMortyEntity() = runBlocking {
         val rickMortyEntity = RickMortyEntity(1, 1,"Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
 
         dao.insertRickMorty(rickMortyEntity)
@@ -45,7 +47,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `insertAndRetrieveMultipleRickMortyEntity`() = runBlocking {
+    fun insertAndRetrieveMultipleRickMortyEntity() = runBlocking {
         val rickMortyEntity1 = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
         val rickMortyEntity2 = RickMortyEntity(2,2, "Morty", "Smith",null,null,null,null,null,null,null,null,null)
         val rickMortyEntity3 = RickMortyEntity(3,3, "Summer", "Smith",null,null,null,null,null,null,null,null,null)
@@ -62,7 +64,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `deleteRickMortyEntity`() = runBlocking {
+    fun deleteRickMortyEntity() = runBlocking {
         val rickMortyEntity = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
         dao.insertRickMorty(rickMortyEntity)
 
@@ -73,7 +75,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `insertSameRickMortyEntityTwice`() = runBlocking {
+    fun insertSameRickMortyEntityTwice() = runBlocking {
         val rickMortyEntity = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
 
         dao.insertRickMorty(rickMortyEntity)
@@ -84,14 +86,14 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `getRickMortyWithInvalidId`() = runBlocking {
+    fun getRickMortyWithInvalidId() = runBlocking {
         val result = dao.getRickMortyWithId(999)
 
         assertNull(result)
     }
 
     @Test
-    fun `deleteNonExistingRickMortyEntity`() = runBlocking {
+    fun deleteNonExistingRickMortyEntity() = runBlocking {
         val rickMortyEntity = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
 
         dao.deleteRickMorty(rickMortyEntity)
@@ -101,21 +103,21 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `getRowCountWithEmptyDatabase`() = runBlocking {
+    fun getRowCountWithEmptyDatabase() = runBlocking {
         val count = dao.getRowCount().first()
 
         assertEquals(0, count)
     }
 
     @Test
-    fun `getRickMortyFlowWithEmptyDatabase`() = runBlocking {
+    fun getRickMortyFlowWithEmptyDatabase() = runBlocking {
         val flowList = dao.getRickMortyFlow().first()
 
         assertTrue(flowList.isEmpty())
     }
 
     @Test
-    fun `updateRickMortyEntity`() = runBlocking {
+    fun updateRickMortyEntity() = runBlocking {
         val rickMortyEntity = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
         dao.insertRickMorty(rickMortyEntity)
 
@@ -127,7 +129,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `getRowCount`() = runBlocking {
+    fun getRowCount() = runBlocking {
         val rickMortyEntity1 = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
         val rickMortyEntity2 = RickMortyEntity(2,2, "Morty", "Smith",null,null,null,null,null,null,null,null,null)
         dao.insertRickMorty(rickMortyEntity1)
@@ -139,7 +141,7 @@ class RickMortyDaoTest {
     }
 
     @Test
-    fun `getRickMortyFlow`() = runBlocking {
+    fun getRickMortyFlow() = runBlocking {
         val rickMortyEntity1 = RickMortyEntity(1,1, "Rick", "Sanchez",null,null,null,null,null,null,null,null,null)
         val rickMortyEntity2 = RickMortyEntity(2,2, "Morty", "Smith",null,null,null,null,null,null,null,null,null)
         dao.insertRickMorty(rickMortyEntity1)

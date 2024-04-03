@@ -453,7 +453,7 @@ class CardStackLayoutManager @JvmOverloads constructor(
     }
 
     fun setVisibleCount(@IntRange(from = 1) visibleCount: Int) {
-        require(!(visibleCount < 1)) { "VisibleCount must be greater than 0." }
+        require(visibleCount >= 1) { "VisibleCount must be greater than 0." }
         cardStackSetting.visibleCount = visibleCount
     }
 

@@ -4,7 +4,7 @@ import com.bbasoglu.swipefun.uimodule.adapter.paginated.BasePagedAdapter
 
 
 class FeedAdapter(
-    var itemSelected: ((Any) -> Unit)? = null,
+    private var itemSelected: ((Any) -> Unit)? = null,
 ) : BasePagedAdapter(
     adapterRowTypes = listOf(
         FeedRow()

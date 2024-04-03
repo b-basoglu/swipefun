@@ -6,8 +6,6 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.bbasoglu.swipefun.matchmaker.common.data.model.entity.LocationEntity
-import com.bbasoglu.swipefun.matchmaker.common.data.model.entity.OriginEntity
 import com.bbasoglu.swipefun.matchmaker.common.data.util.Constants
 import kotlinx.parcelize.Parcelize
 

@@ -1,6 +1,5 @@
 package com.bbasoglu.swipefun.matchmaker.common.data.di
 
-import android.app.Application
 import com.bbasoglu.swipefun.core.client.ClientGenerator
 import com.bbasoglu.swipefun.di.RawOKHttpInstance
 import com.bbasoglu.swipefun.matchmaker.common.data.network.RickyMortyApiHelper

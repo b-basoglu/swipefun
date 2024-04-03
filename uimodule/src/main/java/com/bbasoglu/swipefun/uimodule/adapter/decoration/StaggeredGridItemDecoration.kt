@@ -39,18 +39,24 @@ class StaggeredGridItemDecoration(
                 outRect.bottom = spacingBottom
 
                 // Calculate left and right spacing
-                if (spanIndex == 0) {
-                    // Item is in the leftmost column
-                    outRect.left = spacingLeft
-                    outRect.right = spacingMiddleHalf
-                } else if (spanIndex == spanCount - 1) {
-                    // Item is in the rightmost column
-                    outRect.left = spacingMiddleHalf
-                    outRect.right = spacingRight
-                } else {
-                    // Item is in the middle columns
-                    outRect.left = spacingMiddleHalf
-                    outRect.right = spacingMiddleHalf
+                when (spanIndex) {
+                    0 -> {
+                        // Item is in the leftmost column
+                        outRect.left = spacingLeft
+                        outRect.right = spacingMiddleHalf
+                    }
+
+                    spanCount - 1 -> {
+                        // Item is in the rightmost column
+                        outRect.left = spacingMiddleHalf
+                        outRect.right = spacingRight
+                    }
+
+                    else -> {
+                        // Item is in the middle columns
+                        outRect.left = spacingMiddleHalf
+                        outRect.right = spacingMiddleHalf
+                    }
                 }
             }
         }

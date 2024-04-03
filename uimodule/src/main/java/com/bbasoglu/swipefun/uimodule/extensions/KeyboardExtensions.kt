@@ -27,7 +27,7 @@ fun Activity.showKeyboard() {
 /**
  * Showing keyboard of a view.
  *
- * @param view view to be focused.
+ * view view to be focused.
  */
 fun View.showKeyboard() {
     try {
@@ -46,7 +46,7 @@ fun View.showKeyboard() {
 /**
  * Showing keyboard of a view.
  *
- * @param view view to be focused.
+ * view to be focused.
  */
 fun View.hideKeyboard() {
     try {
@@ -115,6 +115,7 @@ fun Fragment.hideKeyBoard(delay: Long) {
     }, delay)
 }
 
+@Suppress("DEPRECATION")
 fun Fragment.hideKeyBoard(view: View, delay: Long) {
     Handler().postDelayed({
         val activity = this.requireActivity()

@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.bbasoglu.swipefun.databinding.FragmentSplashBinding
-import com.bbasoglu.swipefun.uimodule.base.BaseFragment
 import com.bbasoglu.swipefun.main.MainActivity
+import com.bbasoglu.swipefun.uimodule.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,9 +39,9 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
             }
 
             override fun onTick(millisUntilFinished: Long) {
-                var resultantFloat: Float =
+                val resultantFloat: Float =
                     (TOTAL_TIME - millisUntilFinished).toFloat() / TOTAL_TIME
-                var resultantInt: Int = (resultantFloat * TOTAL_SECONDS).toInt()
+                val resultantInt: Int = (resultantFloat * TOTAL_SECONDS).toInt()
                 if (resultantInt > 5) {
                     splashCompleted()
                 }

@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import com.bbasoglu.swipefun.matchmaker.feed.ui.R
 import com.bbasoglu.swipefun.matchmaker.feed.ui.adapter.model.FeedData
 import com.bbasoglu.swipefun.matchmaker.feed.ui.databinding.RowImagesBinding
+import com.bbasoglu.swipefun.uimodule.adapter.BaseAdapterParent
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseAdapterRow
 import com.bbasoglu.swipefun.uimodule.adapter.base.BaseViewHolder
 import com.bumptech.glide.Glide
-import com.bbasoglu.swipefun.uimodule.adapter.BaseAdapterParent
 
 
 class FeedRow :
@@ -41,7 +41,7 @@ class FeedRow :
 
     inner class ViewHolder(
         binding: RowImagesBinding,
-        val adapterClick: ((Any) -> Unit)?
+        private val adapterClick: ((Any) -> Unit)?
     ) :
         BaseViewHolder<FeedData, RowImagesBinding>(
             binding

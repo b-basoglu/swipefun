@@ -13,9 +13,7 @@ import com.bbasoglu.swipefun.matchmaker.feed.domain.model.RickAndMortyCharacterD
 fun Info.toPageIndexMapper(page:Int):Int{
     val uri = Uri.parse(this.next)
     val nextPageQuery = uri.getQueryParameter("page")
-    return nextPageQuery?.let {
-        it.toInt()
-    }?:let {
+    return nextPageQuery?.toInt() ?: let {
         page+1
     }
 }

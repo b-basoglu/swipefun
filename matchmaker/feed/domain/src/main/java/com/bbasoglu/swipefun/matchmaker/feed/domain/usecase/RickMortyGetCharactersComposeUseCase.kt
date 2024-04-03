@@ -22,9 +22,7 @@ class RickMortyGetCharactersComposeUseCase  @Inject constructor(
                     NetworkResponse.Loading()
                 }
                 is NetworkResponse.Success ->{
-                    val nextNumber:Int = data.data?.info?.let {
-                        it.toPageIndexMapper(page+1)
-                    }?:let {
+                    val nextNumber: Int = data.data?.info?.toPageIndexMapper(page + 1) ?: let {
                         page+1
                     }
                     NetworkResponse.Success(

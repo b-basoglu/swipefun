@@ -8,7 +8,6 @@ import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.Arrays
 import java.util.concurrent.TimeUnit
 
 object ClientGenerator {
@@ -61,7 +60,7 @@ object ClientGenerator {
         }
 
         if (protocol) {
-            builder.protocols(Arrays.asList(Protocol.HTTP_1_1))
+            builder.protocols(listOf(Protocol.HTTP_1_1))
         }
 
         if (BuildConfig.DEBUG) {

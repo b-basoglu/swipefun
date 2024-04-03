@@ -6,5 +6,4 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class FeedScreenComposeFragmentViewModel @Inject constructor() : BaseViewModel() {
-}
+class FeedScreenComposeFragmentViewModel @Inject constructor() : BaseViewModel()

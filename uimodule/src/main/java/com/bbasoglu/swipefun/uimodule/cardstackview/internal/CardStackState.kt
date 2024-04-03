@@ -62,8 +62,7 @@ class CardStackState {
         get() {
             val absDx = abs(dx.toDouble()).toInt()
             val absDy = abs(dy.toDouble()).toInt()
-            val ratio: Float
-            ratio = if (absDx < absDy) {
+            val ratio: Float = if (absDx < absDy) {
                 absDy / (height / 2.0f)
             } else {
                 absDx / (width / 2.0f)
@@ -92,8 +91,6 @@ class CardStackState {
         if (itemCount < position) {
             return false
         }
-        return if (status.isBusy) {
-            false
-        } else true
+        return !status.isBusy
     }
 }

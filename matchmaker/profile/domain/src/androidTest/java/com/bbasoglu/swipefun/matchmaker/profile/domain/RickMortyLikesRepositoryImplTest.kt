@@ -1,7 +1,6 @@
 package com.bbasoglu.swipefun.matchmaker.profile.domain
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.paging.PagingData
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.bbasoglu.swipefun.matchmaker.common.data.db.RickMortyDao
@@ -10,15 +9,11 @@ import com.bbasoglu.swipefun.matchmaker.common.data.model.entity.RickMortyEntity
 import com.bbasoglu.swipefun.matchmaker.profile.data.repository.RickMortyLikesRepository
 import com.bbasoglu.swipefun.matchmaker.profile.domain.repository.RickMortyLikesRepositoryImpl
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.MockitoAnnotations
 
 class RickMortyLikesRepositoryImplTest {
 
@@ -75,8 +70,8 @@ class RickMortyLikesRepositoryImplTest {
         val item = repository.getRickMortyWithId(1)
         val item2 = repository.getRickMortyWithId(2)
 
-        assertEquals(expectedList.get(0), item)
-        assertEquals(expectedList.get(1), item2)
+        assertEquals(expectedList[0], item)
+        assertEquals(expectedList[1], item2)
     }
 
     @Test
@@ -85,7 +80,7 @@ class RickMortyLikesRepositoryImplTest {
         expectedList.forEach{
             repository.insertRickMorty(it)
         }
-        repository.deleteRickMorty(expectedList.get(0))
+        repository.deleteRickMorty(expectedList[0])
         val size = repository.getRickMortyRowCount().first()
 
         assertEquals(size, 1)
