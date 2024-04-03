@@ -1,5 +1,9 @@
 ## Multi Module Application Structure
 
+Feed page shows fragment/xml implementation of tinder swipe using paging3 library.
+(Experimental) FeedCompose page shows compose implementation of tinder swipe custom paging implementation. 
+ProfilePage shows profiles that swiped right and stored in room using pagination.
+
 ### Modules
 
 #### :app
