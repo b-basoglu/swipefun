@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.abs
 
 fun Modifier.swipeAbleCard(
-    state: SwipeableCardState,
+    state: SwipeAbleCardState,
     onSwiped: (Direction) -> Unit,
     onSwipeCancel: () -> Unit = {},
     blockedDirections: List<Direction> = listOf(
@@ -43,7 +43,8 @@ fun Modifier.swipeAbleCard(
             onDragEnd = {
                 launch {
                     val coercedOffset = state.offset.targetValue
-                        .forceDimention(blockedDirections,
+                        .forceDimension(
+                            blockedDirections,
                             maxHeight = state.maxHeight,
                             maxWidth = state.maxWidth)
 
@@ -82,7 +83,7 @@ fun Modifier.swipeAbleCard(
     rotationZ = (state.offset.value.x / 60).coerceIn(-40f, 40f)
 })
 
-private fun Offset.forceDimention(
+private fun Offset.forceDimension(
     blockedDirections: List<Direction>,
     maxHeight: Float,
     maxWidth: Float,
@@ -115,7 +116,7 @@ private fun Offset.forceDimention(
 }
 
 private fun hasNotSwipedEnough(
-    state: SwipeableCardState,
+    state: SwipeAbleCardState,
     offset: Offset,
 ): Boolean {
     return abs(offset.x) < state.maxWidth * 0.3f &&

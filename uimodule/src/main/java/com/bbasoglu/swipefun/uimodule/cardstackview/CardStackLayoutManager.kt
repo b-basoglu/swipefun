@@ -497,7 +497,7 @@ class CardStackLayoutManager @JvmOverloads constructor(
         cardStackSetting.canScrollVertical = canScrollVertical
     }
 
-    fun setSwipeableMethod(swipeableMethod: SwipeableMethod?) {
+    fun setSwipeableMethod(swipeableMethod: SwipeAbleMethod?) {
         cardStackSetting.swipeableMethod = swipeableMethod!!
     }
 

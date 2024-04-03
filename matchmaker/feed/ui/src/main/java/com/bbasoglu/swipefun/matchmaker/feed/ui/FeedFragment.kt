@@ -23,8 +23,8 @@ import com.bbasoglu.swipefun.uimodule.cardstackview.Direction
 import com.bbasoglu.swipefun.uimodule.cardstackview.Duration
 import com.bbasoglu.swipefun.uimodule.cardstackview.RewindAnimationSetting
 import com.bbasoglu.swipefun.uimodule.cardstackview.StackFrom
+import com.bbasoglu.swipefun.uimodule.cardstackview.SwipeAbleMethod
 import com.bbasoglu.swipefun.uimodule.cardstackview.SwipeAnimationSetting
-import com.bbasoglu.swipefun.uimodule.cardstackview.SwipeableMethod
 import com.bbasoglu.swipefun.uimodule.cardstackview.internal.CardStackSnapHelper
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -110,7 +110,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>() {
             manager.setMaxDegree(20.0f)
             manager.setDirections(Direction.HORIZONTAL)
             manager.setCanScrollHorizontal(true)
-            manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual)
+            manager.setSwipeableMethod(SwipeAbleMethod.AutomaticAndManual)
             manager.setOverlayInterpolator(LinearInterpolator())
         }
         binding.recyclerview.run {

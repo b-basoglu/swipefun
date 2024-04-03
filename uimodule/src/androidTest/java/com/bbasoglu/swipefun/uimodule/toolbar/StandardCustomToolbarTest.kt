@@ -35,7 +35,7 @@ class StandardCustomToolbarTest {
     }
 
     @Test
-    fun `testSetToolbar`() {
+    fun testSetToolbar() {
         val mockToolbarIconClick = mock(StandardCustomToolbar.ToolbarIconClick::class.java)
         val mockToolbarIconClickRight = mock(StandardCustomToolbar.ToolbarIconClick::class.java)
 

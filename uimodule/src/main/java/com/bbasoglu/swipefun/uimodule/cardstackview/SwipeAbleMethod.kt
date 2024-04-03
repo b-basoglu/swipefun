@@ -1,6 +1,6 @@
 package com.bbasoglu.swipefun.uimodule.cardstackview
 
-enum class SwipeableMethod {
+enum class SwipeAbleMethod {
     AutomaticAndManual,
     Automatic,
     Manual,
