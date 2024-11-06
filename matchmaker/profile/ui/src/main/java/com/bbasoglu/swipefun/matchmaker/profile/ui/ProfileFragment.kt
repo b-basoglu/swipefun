@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.ProfileAdapter
+import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.ProfileAdapterClickEvent
 import com.bbasoglu.swipefun.matchmaker.profile.ui.adapter.model.ProfileUiData
 import com.bbasoglu.swipefun.matchmaker.profile.ui.databinding.FragmentProfileBinding
 import com.bbasoglu.swipefun.uimodule.adapter.decoration.StaggeredGridItemDecoration
@@ -77,8 +78,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun resultClicked(data: Any) {
         when(data){
-            is ProfileUiData ->{
-                Toast.makeText(requireContext(), "${data.name} clicked", Toast.LENGTH_SHORT).show()
+            is ProfileAdapterClickEvent ->{
+                when(data){
+                    is ProfileAdapterClickEvent.ProfileItemClicked -> {
+                        Toast.makeText(requireContext(), "${data.profileUiData.name} clicked", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }

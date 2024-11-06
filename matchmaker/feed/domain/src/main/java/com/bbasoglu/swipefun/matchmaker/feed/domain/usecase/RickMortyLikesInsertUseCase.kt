@@ -7,6 +7,7 @@ import com.bbasoglu.swipefun.matchmaker.feed.domain.model.mapper.toRickAndMortyE
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import android.location.Location
 
 class RickMortyLikesInsertUseCase @Inject constructor(
     private val rickMortyLikesInsertRepository: RickMortyLikesInsertRepository,

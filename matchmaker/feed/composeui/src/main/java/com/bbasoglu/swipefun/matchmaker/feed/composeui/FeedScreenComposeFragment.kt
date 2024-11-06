@@ -22,6 +22,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FeedScreenComposeFragment : BaseFragment<FragmentFeedComposeBinding>() {
 
+
     override val viewModel by viewModels<FeedScreenComposeFragmentViewModel>()
 
     override fun getViewBinding(container: ViewGroup?): FragmentFeedComposeBinding =

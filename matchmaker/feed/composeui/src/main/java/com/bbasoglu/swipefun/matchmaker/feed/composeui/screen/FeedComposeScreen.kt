@@ -1,5 +1,6 @@
 package com.bbasoglu.swipefun.matchmaker.feed.composeui.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -41,7 +43,7 @@ fun FeedComposeScreen(
 ) {
     val moviePagingItems by viewModel.feedState.collectAsState()
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(20.dp).background(Color.Cyan)
     ) {
         ConstraintLayout(
             modifier = Modifier.fillMaxSize()

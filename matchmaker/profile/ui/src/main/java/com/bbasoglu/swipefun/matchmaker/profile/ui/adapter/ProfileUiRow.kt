@@ -56,7 +56,7 @@ class ProfileUiRow :
                 binding.typeText.text = data.name
             }
             binding.root.setOnClickListener {
-                adapterClick?.invoke(data)
+                adapterClick?.invoke(ProfileAdapterClickEvent.ProfileItemClicked(data))
             }
         }
     }

@@ -36,6 +36,7 @@ class RickMortyGetCharactersComposeUseCase  @Inject constructor(
                 }
             }
         }
+
     }catch (e:Exception){
         NetworkResponse.Error(null,null,null)
     }

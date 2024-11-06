@@ -15,7 +15,7 @@ class RickMortyLikesRepositoryImpl@Inject constructor(private val database: Rick
     override fun getRickMortyPaging(): Flow<PagingData<RickMortyEntity>> {
         val pagingSourceFactory = { database.rickMortyDao().getRickMortyPaging() }
         return Pager(
-            config = PagingConfig(7, enablePlaceholders = false),
+            config = PagingConfig(20, enablePlaceholders = false),
             pagingSourceFactory = pagingSourceFactory
         ).flow
     }
