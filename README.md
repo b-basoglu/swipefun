@@ -6,6 +6,8 @@ Application behaviour -> https://youtu.be/xuG91gBno9Q
 - (Experimental) FeedCompose page shows compose implementation of tinder swipe custom paging implementation. 
 - ProfilePage shows profiles that swiped right and stored in room using paging3.
 
+### TinderSwipe – Android Tinder-like Swipe Animation
+
 ### Modules
 
 #### :app
